@@ -1,0 +1,110 @@
+/* Styling the bank app */
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    --color-dgreen: rgb(0, 90, 0);
+    --color-tgreen: rgba(0, 90, 0, 90%);
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    background-color: var(--color-dgreen);
+    color: white;
+    display: flex;
+    align-items: center;
+    border: 2px solid ;
+    padding: 5px 15px;
+}
+header > span{
+    font-size: 5rem;
+    background-color: white;
+    border-radius: 50%;
+}
+header h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    margin: 0;
+    padding-left: 10px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    background-color: var(--color-dgreen);
+    color: white;
+    font-weight: bold;
+    word-spacing: 10px;
+    font-size: 1rem;
+}
+#intro{
+    color: var(--color-dgreen);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+#userBalances{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15%;
+    padding: 15px;
+    margin: 0;
+    flex-grow: 1;
+}
+main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.wallets{
+    height: fit-content;
+    font-weight: bold;
+    background-color: var(--color-tgreen);
+    border-radius: 15px;
+    box-shadow: -3px 3px 9px var(--color-tgreen);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.wallets p {
+    color: white;
+    opacity: 70%;
+}
+.wallets h1{
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.wallets h1 span{
+    font-size: 1.3rem;
+}
+#walletBtn{
+    display: flex;
+    gap: 15px;
+}
+.wallets button{
+    flex-grow: 1;
+    padding: 10px 15px;
+    background-color: white;
+    color: var(--color-dgreen);
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 15px;
+    transition: 500ms ease-in-out;
+}
+.wallets button:hover{
+    background-color: var(--color-dgreen);
+    color: white;
+    border: 1px solid white;
+}
