@@ -7,36 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="information" style="display: none;"></div>
     <header>
         <span>🏦</span>
         <h1>Cash <br>Vault</h1>
     </header>
     <main>
-        <h5 id="intro">Gm Prince 🤴, welcome back</h5>
-        <section id="userBalances">
-            <article class="wallets">
+        <section class="accountContainer" id="register" style="display: none;">
+            <h6 class="text">Let grow your wealth with interest</h6>
+            <p id="textIntro">Enter your name and the amount you want to save</p>
+            <form action="#" id="regForm">
+                <input type="text" placeholder="Enter your name" id="username" required>
+                <input type="number" placeholder="Enter the amount" id="amount" required>
+                <button id="saveUser">Save</button>
+            </form>
+        </section>
+
+        <section class="accountContainer" id="dashboard" style="display: none;">
+            <h6 class="text">Hi <span id="userChar"></span>, welcome back</h6>
+            <article>
                 <p>Main Wallet</p>
-                <h1>****.** <span>🔒</span></h1>
-                <div id="walletBtn">
-                    <button>Deposit</button>
-                    <button>Withdraw</button>
-                </div>
-            </article>
+                <h1><span id="balance">****.**</span><span onclick="showBalance()" id="lock">🔒</span></h1>
 
-            <article class="wallets">
-                <p>Savings Wallet</p>
-                <h1>****.** <span>🔒</span></h1>
-                <div id="walletBtn">
-                    <button>Deposit</button>
-                    <button>Withdraw</button>
+                <div id="buttonDiv">
+                    <button id="depositBtn">Deposit</button>
+                    <button id="withdrawBtn">Withdraw</button>
                 </div>
             </article>
         </section>
 
-        <section style="display: none;">
-            <button>x</button>
-            <h1>You have successfull deposited $2000 to your main wallet</h1>
-        </section>
+        <!-- <section id="despositFormMain">
+            <button id="close" onclick="closeDepositMain()">x</button>
+            <h1>Depsit Funds</h1>
+            <hr style="width: 100%;">
+            <form action="#">
+                <input type="text" value="$" id="amount"> <br>
+                <button onclick="deposit()">Deposit</button>
+            </form>
+        </section> -->
     </main>
     <footer>
         <p>All right reserved &copy 2025. </p>

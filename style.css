@@ -1,6 +1,6 @@
 /* Styling the bank app */
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
     --color-dgreen: rgb(0, 90, 0);
     --color-tgreen: rgba(0, 90, 0, 90%);
@@ -13,12 +13,20 @@ body{
     display: flex;
     flex-direction: column;
 }
+#information{
+    position: absolute;
+    right: 0;
+    background-color: white;
+    padding: 15px;
+    font-size: 0.7rem;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
 header{
     background-color: var(--color-dgreen);
     color: white;
     display: flex;
     align-items: center;
-    border: 2px solid ;
     padding: 5px 15px;
 }
 header > span{
@@ -34,77 +42,175 @@ header h1{
 }
 
 footer{
-    position: absolute;
+    position: relative;
     bottom: 0;
     text-align: center;
     width: 100%;
-    background-color: var(--color-dgreen);
-    color: white;
+    border-top: 2px solid var(--color-dgreen);
+    color: var(--color-dgreen);
     font-weight: bold;
     word-spacing: 10px;
     font-size: 1rem;
 }
-#intro{
-    color: var(--color-dgreen);
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding-left: 15px;
-    margin-bottom: 0;
-}
-#userBalances{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15%;
-    padding: 15px;
+footer p{
     margin: 0;
-    flex-grow: 1;
+    padding: 5px;
 }
 main{
+    display: flex;
     flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.accountContainer{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding: 15px 20px;
+    text-align: center;
+    width: 350px;
+    min-height: 400px;
+    background-color: var(--color-dgreen);
+    border-radius: 5rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0, 70%);
 }
-.wallets{
-    height: fit-content;
+.text{
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    margin: 0;
+    color: white;
+}
+#textIntro{
+    color: white;
+    font-weight: bold;
+    opacity: 75%;
+}
+#regForm *{
+    outline: none;
+}
+#regForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#regForm input{
+    padding: 5px;
+    font-size: 1rem;
+}
+#regForm input::placeholder{
+    color: var(--color-dgreen);
+    opacity: 75%;
+    font-size: 1rem;
+}
+#regForm button{
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-dgreen);
+    border: none;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+#regForm button:active{
     background-color: var(--color-tgreen);
+    color: white;
+    border: 2px solid white;
+
+}
+#dashboard article{
+    text-align: left;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 10px;
+}
+#dashboard article p{
+    font-weight: bold;
+    color: var(--color-dgreen);
+    font-size: 1.2rem;
+}
+#dashboard article #balance{
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+#dashboard article #lock{
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+#dashboard article #buttonDiv{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+}
+#dashboard article #buttonDiv button{
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
     border-radius: 15px;
-    box-shadow: -3px 3px 9px var(--color-tgreen);
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    color: white;
+}
+#dashboard article #buttonDiv button:first-child{
+    background-color: green;
+}
+#dashboard article #buttonDiv button:first-child:active{
+    background-color: rgb(48, 212, 48);
+}
+#dashboard article #buttonDiv button:last-child{
+    background-color: rgb(255, 0, 0);
+}
+#dashboard article #buttonDiv button:last-child:active{
+    background-color: rgb(233, 71, 71);
 }
 
-.wallets p {
+/* #despositFormMain{
+    position: absolute;
+    top: 0;
+    background-color: var(--color-tgreen);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#despositFormMain #close{
     color: white;
-    opacity: 70%;
-}
-.wallets h1{
-    color: white;
-    font-size: 1.5rem;
-    margin: 0;
-    margin-bottom: 30px;
-}
-.wallets h1 span{
-    font-size: 1.3rem;
-}
-#walletBtn{
-    display: flex;
-    gap: 15px;
-}
-.wallets button{
-    flex-grow: 1;
-    padding: 10px 15px;
-    background-color: white;
-    color: var(--color-dgreen);
-    font-weight: bold;
-    font-size: 1rem;
+    background-color: unset;
     border: none;
-    border-radius: 15px;
-    transition: 500ms ease-in-out;
+    font-size: 2rem;
+    position: absolute;
+    top: 10px;
+    right: 1;
 }
-.wallets button:hover{
-    background-color: var(--color-dgreen);
+
+#despositFormMain h1{
     color: white;
-    border: 1px solid white;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
 }
+
+#despositFormMain form{
+    text-align: center;
+}
+#despositFormMain form input{
+    font-size: 2rem;
+    outline: none;
+    padding: 10px 15px;
+    width: 50%;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+}
+#despositFormMain form button{
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    color: var(--color-dgreen);
+} */
