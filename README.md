@@ -3,7 +3,7 @@
 ## Description
 Managing user account balances
 
-## Key COncept
+## Key Concept
 - objects
 - Functions
 - Conditionals
