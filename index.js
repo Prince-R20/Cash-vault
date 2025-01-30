@@ -42,27 +42,45 @@ function deposit(){
     const amount = document.getElementById("depositAmount");
     const account = JSON.parse(localStorage.getItem("account"));
 
-    account.balance += Number(amount.value);
+    if(amount.value != ""){
+        account.balance += Number(amount.value);
     
-    localStorage.setItem("account", JSON.stringify(account))
+        localStorage.setItem("account", JSON.stringify(account))
 
 
-    closeForm();
-    showInfo(`You have Successfully deposited the sum of $${amount.value}`);
+        closeForm();
+        showInfo(`You have Successfully deposited the sum of $${amount.value}`);
 
-    const balance = document.getElementById("balance");
-    
-    if(balance.textContent != "****.**"){
-        balance.textContent = `$${account.balance}`;
+        const balance = document.getElementById("balance");
+        
+        if(balance.textContent != "****.**"){
+            balance.textContent = `$${account.balance}`;
+        }
     }
 }
 
-function withdraw(amount){
-    if(amount > mainWallet.balance){
-        window.alert("Insuficient Fund")
-    }else{
-        mainWallet.balance -= amount;
-        console.log(`You have successfully withdrawn $${amount}`)
+function withdraw(){
+
+    const amount = document.getElementById("depositAmount");
+    const account = JSON.parse(localStorage.getItem("account"));
+
+    if(amount.value != ""){
+        if(amount.value <= account.balance){
+            account.balance -= Number(amount.value);
+            localStorage.setItem("account", JSON.stringify(account))
+
+            closeForm();
+            showInfo(`You have Successfully withdrawn the sum of $${amount.value}`);
+
+            const balance = document.getElementById("balance");
+            if(balance.textContent != "****.**"){
+                balance.textContent = `$${account.balance}`;
+            }
+        }else{
+            showInfo("Baba! you dey whine, check amount way you put o")
+            closeForm();
+            document.getElementById("infoText").style.color = "red"
+        }
     }
 }
 
@@ -78,7 +96,7 @@ function ToogleBalance(para){
 }
 
 function closeForm(){
-    document.getElementById("despositForm").style.display = "none";
+    document.getElementById("Form").style.display = "none";
 }
 
 function showDashboard(){
@@ -90,22 +108,43 @@ function showDashboard(){
     userChar.textContent = account.name;
 }
 
-function showForm(){
-    const despositForm = document.getElementById("despositForm");
-    despositForm.style.display = "flex"
-   document.getElementById("depositAmount").value = "";
+function showForm(type, action){
+    const transactType = document.getElementById("transactType");
+    transactType.textContent = type;
+
+    const transactAction = document.getElementById("transactAction");
+    transactAction.textContent = action;
+
+    const transactBtn = document.getElementById("transactBtn");
+    transactBtn.textContent = type;
+
+    if(type == "Deposit"){
+        transactBtn.removeEventListener("click", withdraw)
+        transactBtn.addEventListener("click", deposit);
+    }else if(type == "Withdraw"){
+        transactBtn.addEventListener("click", withdraw);
+        transactBtn.removeEventListener("click", deposit)
+    }
+
+    const Form = document.getElementById("Form");
+    Form.style.display = "flex"
+    document.getElementById("depositAmount").value = "";
+
 }
 
 function showInfo(info){
     const h1 = document.createElement("h1");
     h1.textContent = info;
+
+    h1.id = "infoText"
+
     informationDiv.append(h1)
     informationDiv.style.display = "block";
 
     setTimeout(() => {
         informationDiv.style.display = "none";
         h1.textContent = ""
-    }, 2500);
+    }, 4000);
 
     showDashboard();
 }

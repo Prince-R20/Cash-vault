@@ -30,20 +30,20 @@
                 <h1><span id="balance">****.**</span><span onclick="ToogleBalance()" id="lock">🔒</span></h1>
 
                 <div id="buttonDiv">
-                    <button id="depositBtn" onclick="showForm('deposit')">Deposit</button>
-                    <button id="withdrawBtn" onclick="showForm('deposit')">Withdraw</button>
+                    <button id="depositBtn" onclick="showForm('Deposit' , 'fund your wallet with?')">Deposit</button>
+                    <button id="withdrawBtn" onclick="showForm('Withdraw', 'withdraw from your wallet?')">Withdraw</button>
                 </div>
             </article>
         </section>
 
-        <section id="despositForm" style="display: none;">
+        <section id="Form" style="display: none;">
             <button id="close" onclick="closeForm()">x</button>
-            <h1>Depsit Funds</h1>
-            <p>How much do you want to fund your wallet with?</p>
+            <h1><span id="transactType"></span> Funds</h1>
+            <p>How much do you want to <span id="transactAction"></span> </p>
             <hr style="width: 100%;">
             <form action="">
                 <input type="number" id="depositAmount" placeholder="Amount" required> <br>
-                <button onclick="deposit()">Deposit</button>
+                <button id="transactBtn"></button>
             </form>
         </section>
     </main>

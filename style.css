@@ -167,7 +167,7 @@ main{
     background-color: rgb(233, 71, 71);
 }
 
-#despositForm{
+#Form{
     position: absolute;
     top: 0;
     background-color: #00800096;
@@ -180,7 +180,7 @@ main{
     align-items: center;
 }
 
-#despositForm #close{
+#Form #close{
     color: red;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: white;
@@ -188,25 +188,25 @@ main{
     padding: 5px 15px;
     font-size: 1.5rem;
 }
-#despositForm #close:active{
+#Form #close:active{
     background-color: red;
     color: white;
 }
 
-#despositForm h1{
+#Form h1{
     color: black;
     font-size: 2rem;
     text-align: center;
 }
-#despositForm p{
+#Form p{
     font-size: 1.5rem;
     color: white;
     font-weight: bold;
 }
-#despositForm form{
+#Form form{
     text-align: center;
 }
-#despositForm form input{
+#Form form input{
     font-size: 1.5rem;
     outline: none;
     padding: 10px 15px;
@@ -216,7 +216,7 @@ main{
     border-radius: 20px;
     text-align: center;
 }
-#despositForm form button{
+#Form form button{
     margin-top: 20px;
     padding: 10px 15px;
     font-size: 1.5rem;
