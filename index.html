@@ -27,24 +27,25 @@
             <h6 class="text">Hi <span id="userChar"></span>, welcome back</h6>
             <article>
                 <p>Main Wallet</p>
-                <h1><span id="balance">****.**</span><span onclick="showBalance()" id="lock">🔒</span></h1>
+                <h1><span id="balance">****.**</span><span onclick="ToogleBalance()" id="lock">🔒</span></h1>
 
                 <div id="buttonDiv">
-                    <button id="depositBtn">Deposit</button>
-                    <button id="withdrawBtn">Withdraw</button>
+                    <button id="depositBtn" onclick="showForm('deposit')">Deposit</button>
+                    <button id="withdrawBtn" onclick="showForm('deposit')">Withdraw</button>
                 </div>
             </article>
         </section>
 
-        <!-- <section id="despositFormMain">
-            <button id="close" onclick="closeDepositMain()">x</button>
+        <section id="despositForm" style="display: none;">
+            <button id="close" onclick="closeForm()">x</button>
             <h1>Depsit Funds</h1>
+            <p>How much do you want to fund your wallet with?</p>
             <hr style="width: 100%;">
-            <form action="#">
-                <input type="text" value="$" id="amount"> <br>
+            <form action="">
+                <input type="number" id="depositAmount" placeholder="Amount" required> <br>
                 <button onclick="deposit()">Deposit</button>
             </form>
-        </section> -->
+        </section>
     </main>
     <footer>
         <p>All right reserved &copy 2025. </p>

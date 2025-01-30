@@ -167,50 +167,62 @@ main{
     background-color: rgb(233, 71, 71);
 }
 
-/* #despositFormMain{
+#despositForm{
     position: absolute;
     top: 0;
-    background-color: var(--color-tgreen);
+    background-color: #00800096;
+    backdrop-filter: blur(5px);
     width: 100%;
     height: 100vh;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-#despositFormMain #close{
-    color: white;
-    background-color: unset;
+#despositForm #close{
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: white;
     border: none;
-    font-size: 2rem;
-    position: absolute;
-    top: 10px;
-    right: 1;
+    padding: 5px 15px;
+    font-size: 1.5rem;
 }
-
-#despositFormMain h1{
+#despositForm #close:active{
+    background-color: red;
     color: white;
-    font-size: 2rem;
-    text-align: center;
-    margin: 0;
 }
 
-#despositFormMain form{
+#despositForm h1{
+    color: black;
+    font-size: 2rem;
     text-align: center;
 }
-#despositFormMain form input{
-    font-size: 2rem;
+#despositForm p{
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+#despositForm form{
+    text-align: center;
+}
+#despositForm form input{
+    font-size: 1.5rem;
     outline: none;
     padding: 10px 15px;
     width: 50%;
     font-weight: bold;
     border: none;
     border-radius: 20px;
+    text-align: center;
 }
-#despositFormMain form button{
+#despositForm form button{
     margin-top: 20px;
     padding: 10px 15px;
     font-size: 1.5rem;
+    font-weight: bold;
     border-radius: 20px;
-    color: var(--color-dgreen);
-} */
+    border: none;
+    color: white;
+    background-color: red;
+}
