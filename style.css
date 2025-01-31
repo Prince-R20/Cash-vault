@@ -9,9 +9,12 @@
 body{
     margin: 0;
     height: 100vh;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+
+    @media (height > 200px) {
+        overflow: hidden;
+    }
 }
 #information{
     position: absolute;
@@ -28,6 +31,7 @@ header{
     display: flex;
     align-items: center;
     padding: 5px 15px;
+    height: 20vh;
 }
 header > span{
     font-size: 5rem;
@@ -67,12 +71,10 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 15px 20px;
+    padding: 30px 25px;
     text-align: center;
-    width: 350px;
-    min-height: 400px;
     background-color: var(--color-dgreen);
-    border-radius: 5rem;
+    border-radius: 30px;
     box-shadow: 2px 2px 5px rgba(0,0,0, 70%);
 }
 .text{
@@ -202,6 +204,7 @@ main{
     font-size: 1.5rem;
     color: white;
     font-weight: bold;
+    text-align: center;
 }
 #Form form{
     text-align: center;
@@ -215,6 +218,7 @@ main{
     border: none;
     border-radius: 20px;
     text-align: center;
+    border: 2px solid var(--color-tgreen);
 }
 #Form form button{
     margin-top: 20px;
